@@ -1,14 +1,15 @@
 "use client";
-import * as React from "react";
+import { useState } from "react";
 import { Button } from "@ui/components/button";
 import { Input } from "@ui/components/input";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
   const router = useRouter();
+  const [room, setRoom] = useState("");
 
   function enterPage() {
-    router.push("/chat/123");
+    router.push(`/chat/${room}`);
   }
 
   return (
@@ -62,6 +63,10 @@ export default function Page() {
               color: "white",
               marginTop: "50px",
               border: "none",
+            }}
+            value={room}
+            onChange={(e) => {
+              setRoom(e.target.value);
             }}
           />
           <Button
