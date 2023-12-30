@@ -22,4 +22,3 @@ This also allows each component (The servers which could be deployed to AWS/any 
 - Redis
 
 
-The project is in progress.
